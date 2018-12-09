@@ -4,7 +4,9 @@ import {
   StyleSheet,
   FlatList,
   Text,
-  View
+  View,
+  ScrollView,
+  ImageBackground
 } from 'react-native';
 import {SearchBar, Button} from 'react-native-elements';
 import BookcaseItem from './BookcaseItem';
@@ -19,6 +21,7 @@ export default class Boookcase extends Component {
     this.state ={
       data : Books
     }
+    BG = require('../images/BG.png');
   }
 
   openDetail = (data) => {
@@ -31,33 +34,102 @@ export default class Boookcase extends Component {
       //index = {index + 1}
       //id={item.id}
       passdata = {item.title}
-      title={item.title}
-      author={item.author}
+      //title={'Magic Stories'}
+      //author={item.author}
       thumbnail={item.thumbnail}
       openDetail={()=> this.openDetail(passdata)}
     />
   );
 
   _keyExtractor = (item, index) => 
-    (item.id).toString()
-  ;
+    (item.id).toString();
 
   render() {
     return (
-      <View style={styles.container}>
-        <SearchBar
+
+      <ScrollView  style={styles.container}>
+        {/* <SearchBar
           showLoading
           platform="android"
           placeholder='Search...' />
         <StatusBar
           barStyle="light-content"
-        />
-        <FlatList
-          data={Books}
-          keyExtractor={this._keyExtractor}
-          renderItem={this._renderItem}
-        />
-      </View>
+        /> */}
+        <ImageBackground source={BG} style={{flex:1, resizeMode: 'repeat'}}>
+          {/* <View style={{flex:1, marginTop: 5}}>
+            <Text style={{marginLeft: 2,color:'black', borderBottomColor: '#BEC2B9', borderBottomWidth: 1,}}>Most Stories</Text>
+            <FlatList
+              horizontal
+              data={Books}
+              keyExtractor={this._keyExtractor}
+              renderItem={this._renderItem}
+            />
+          </View>
+          <View style={{flex:1, marginTop: 15}}>
+            <Text style={{marginLeft: 2,color:'black', borderBottomColor: '#BEC2B9', borderBottomWidth: 1,}}>Read Most Stories</Text>
+            <FlatList
+              horizontal
+              data={Books}
+              keyExtractor={this._keyExtractor}
+              renderItem={this._renderItem}
+            />
+          </View>
+          <View style={{flex:1, marginTop: 15}}>
+            <Text style={{marginLeft: 2,color:'black', borderBottomColor: '#BEC2B9', borderBottomWidth: 1,}}>Most Stories</Text>
+            <FlatList
+              horizontal
+              data={Books}
+              keyExtractor={this._keyExtractor}
+              renderItem={this._renderItem}
+            />
+          </View>
+          <View style={{flex:1, marginTop: 15}}>
+            <Text style={{marginLeft: 2,color:'black', borderBottomColor: '#BEC2B9', borderBottomWidth: 1,}}>Read Most Stories</Text>
+            <FlatList
+              horizontal
+              data={Books}
+              keyExtractor={this._keyExtractor}
+              renderItem={this._renderItem}
+            />
+          </View>
+          <View style={{flex:1, marginTop: 15}}>
+            <Text style={{marginLeft: 2,color:'black', borderBottomColor: '#BEC2B9', borderBottomWidth: 1,}}>Most Stories</Text>
+            <FlatList
+              horizontal
+              data={Books}
+              keyExtractor={this._keyExtractor}
+              renderItem={this._renderItem}
+            />
+          </View>
+          <View style={{flex:1, marginTop: 15}}>
+            <Text style={{marginLeft: 2,color:'black', borderBottomColor: '#BEC2B9', borderBottomWidth: 1,}}>Read Most Stories</Text>
+            <FlatList
+              horizontal
+              data={Books}
+              keyExtractor={this._keyExtractor}
+              renderItem={this._renderItem}
+            />
+          </View>
+          <View style={{flex:1, marginTop: 15}}>
+            <Text style={{marginLeft: 2,color:'black', borderBottomColor: '#BEC2B9', borderBottomWidth: 1,}}>Most Stories</Text>
+            <FlatList
+              horizontal
+              data={Books}
+              keyExtractor={this._keyExtractor}
+              renderItem={this._renderItem}
+            />
+          </View>
+          <View style={{flex:1, marginTop: 15}}>
+            <Text style={{marginLeft: 2,color:'black', borderBottomColor: '#BEC2B9', borderBottomWidth: 1,}}>Read Most Stories</Text>
+            <FlatList
+              horizontal
+              data={Books}
+              keyExtractor={this._keyExtractor}
+              renderItem={this._renderItem}
+            />
+          </View> */}
+        </ImageBackground>
+      </ScrollView>
     );
   }
 }
@@ -65,6 +137,6 @@ export default class Boookcase extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#000000',
+    backgroundColor: '#E7FAD3',
   }
 });
