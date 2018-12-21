@@ -5,6 +5,7 @@ import {
     Text,
     Image,
     View,
+    Dimensions,
   } from 'react-native';
 import { Icon } from 'react-native-elements';
 
@@ -29,10 +30,15 @@ export default class BookcaseItem extends Component {
         return(
           <TouchableOpacity onPress={this._onPress}>
               <View style={styles.rowContainer}>
+              {/* <View style={styles.rowText}>
+                  <Text style={styles.title} numberOfLines={2} ellipsizeMode ={'tail'}>
+                    {this.props.title}
+                  </Text>
+              </View> */}
                 <Image source={{uri: this.props.thumbnail}}
                 style={styles.thumbnail}
-                resizeMode="contain" />
-                <View style={styles.rowText}>
+                resizeMode="cover" />
+                {/* <View style={styles.rowText}>
                   <Text style={styles.title} numberOfLines={2} ellipsizeMode ={'tail'}>
                     {this.props.title}
                   </Text>
@@ -41,8 +47,8 @@ export default class BookcaseItem extends Component {
                   </Text>
                   <Text>{this.props.id}</Text>
                   <Text>{this.props.index}</Text>
-                </View>
-                <TouchableOpacity 
+                </View> */}
+                {/* <TouchableOpacity 
                   onPress={this.TF}>
                   <Icon 
                     size={10}
@@ -53,7 +59,7 @@ export default class BookcaseItem extends Component {
                     type='font-awesome'
                     
                   />
-              </TouchableOpacity>
+              </TouchableOpacity> */}
             </View>
           </TouchableOpacity>
           
@@ -63,25 +69,26 @@ export default class BookcaseItem extends Component {
 
 const styles = StyleSheet.create({
   rowContainer: {
-    flexDirection: 'row',
+    //flexDirection: 'row',
     backgroundColor: '#FFF',
+    width: 80,
     height: 100,
-    padding: 8,
+    //padding: 2,
     marginRight: 1,
     marginLeft: 1,
     marginTop: 4,
-    borderRadius: 5,
-    shadowOffset:{  width: 1,  height: 1,  },
-    shadowColor: '#CCC',
-    shadowOpacity: 1.0,
-    shadowRadius: 1
+    //borderRadius: 5,
+    //shadowOffset:{  width: 1,  height: 1,  },
+    //shadowColor: '#CCC',
+    //shadowOpacity: 1.0,
+    //shadowRadius: 1
   },
   title: {
-    paddingLeft: 10,
-    paddingTop: 0,
-    fontSize: 16,
+    //paddingLeft: 10,
+    //paddingTop: 0,
+    fontSize: 12,
     fontWeight: 'bold',
-    color: '#777'
+    color: '#000000'
   },
   author: {
     paddingLeft: 10,
@@ -95,8 +102,8 @@ const styles = StyleSheet.create({
   },
   thumbnail: {
     flex: 1,
-    height: undefined,
-    width: undefined
+    //height: undefined,
+    //width: undefined
   },
   rowText: {
     flex: 4,
